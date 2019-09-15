@@ -20,11 +20,15 @@ class App extends Component{
     window.app = this
     console.log('APP mount')
   }
-  componentWillUpdate(nextProps, nextState) {
+  UNSAFE_componentWillUpdate(nextProps, nextState) {
     console.log('APP will update')
   }
   componentDidUpdate(prevProps, prevState){
     console.log('APP did update')
+  }
+
+  componentWillUnmount(){
+    console.log('APP unmount')
   }
 }
 
@@ -41,7 +45,7 @@ class Sonl extends Component{
   componentDidMount(){
     console.log('sonl mount')
   }
-  componentWillUpdate(nextProps, nextState) {
+  UNSAFE_componentWillUpdate(nextProps, nextState) {
     console.log('sonl will update')
   }
   componentDidUpdate(prevProps, prevState){
@@ -64,7 +68,7 @@ class GrendSonl extends Component{
   componentDidMount(){
     console.log('GrendSonl mount')
   }
-  componentWillUpdate(nextProps, nextState) {
+  UNSAFE_componentWillUpdate(nextProps, nextState) {
     console.log('GrendSonl will update')
   }
   componentDidUpdate(prevProps, prevState){
