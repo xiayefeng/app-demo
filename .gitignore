@@ -12,6 +12,7 @@
 /build
 .idea
 .vscode
+.gitignore
 
 # misc
 .DS_Store
