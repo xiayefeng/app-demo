@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 import ReactDOM from 'react-dom'
-import './loading/index.css'
+import './index.css'
 
 class Loading extends Component{
   render() {
@@ -29,3 +29,5 @@ const loading = {
     }
   }
 }
+
+export default loading
