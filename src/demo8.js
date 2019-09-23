@@ -17,12 +17,6 @@ class App extends Component{
       },
       content: '确定执行删除操作吗？'
     })
-
-    /*input.show({
-      onOk: (val)=>{
-        alert(val)
-      }
-    })*/
   }
 }
 
