@@ -16,7 +16,7 @@ class InputDialog extends Component {
     const {onOk} = this.props
     return (
       <div className="dialog-wrap">
-        <div className="dialog-mask"></div>
+        <div className="dialog-mask" />
         <div className="dialog-box">
           <input type="text" value={this.state.value} onChange={(e) => {
             this.setState({

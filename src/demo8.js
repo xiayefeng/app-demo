@@ -1,6 +1,5 @@
 import React, {Component} from 'react'
-import loading from './loading/loading'
-// import input from './dialog/InputDialog'
+import confirmSource from './confirm/ConfirmDialog'
 
 class App extends Component{
   render(){
@@ -12,10 +11,13 @@ class App extends Component{
   }
   componentDidMount(){
     console.log('app mounted')
-    loading.show()
-    setTimeout(() => {
-      loading.hide()
-    }, 2000)
+    confirmSource.show({
+      confirm(){
+        console.log('点击确定按钮')
+      },
+      content: '确定执行删除操作吗？'
+    })
+
     /*input.show({
       onOk: (val)=>{
         alert(val)
