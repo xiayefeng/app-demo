@@ -100,10 +100,8 @@ class TodoList extends Component {
               onDelete={onDelete}
               onEdit={onEdit}
               index={index}
-
             />}
             {item.isEdit && <EditItem changeName={changeName} index={index} name={item.name} />}
-
           </div>
         ))}
       </div>
