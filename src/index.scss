@@ -15,3 +15,15 @@ code {
 .work-box{
   margin: 20px 50px;
 }
+
+@mixin clearfix {
+  &:before,
+  &:after {
+    content: "";
+    display: table ;
+  }
+  &:after {
+    clear: both;
+  }
+}
+
