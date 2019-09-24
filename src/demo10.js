@@ -4,7 +4,7 @@ import './demo10.scss'
 class ShowItem extends Component{
   render ()
   {
-    const {name, onDelete, onEdit, index, setName} = this.props
+    const {name, onDelete, onEdit, index} = this.props
     return (
       <div>
         <p className="item-name">{name}</p>
