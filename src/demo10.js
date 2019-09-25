@@ -39,11 +39,16 @@ class EditItem extends Component {
     const {changeName, index} = this.props
     return (
       <div>
-        <input value={this.state.value} onChange={(e)=> {
+        <input className="edit-input" value={this.state.value} onKeyUp={event => {
+          if (event.which === 13) {
+            changeName(event.target.value, index)
+          }
+        }} onChange={(e)=> {
           this.setState({
             value: e.target.value
           })
-        }} />
+        }}
+        />
         <span className="complate-btn" onClick={(e) => {
           changeName(this.state.value, index)
         }
@@ -59,23 +64,33 @@ class Action extends Component {
     this.state = {
       value: ''
     }
+    this.submitData = this.submitData.bind(this)
+  }
+
+  submitData () {
+    const {onAdd} = this.props
+    onAdd(this.state.value)
+    this.setState({
+      value: ''
+    })
   }
 
   render () {
-    const {onAdd} = this.props
+
     return (
       <div className="input-box">
-        <input type="text" value={this.state.value} onChange={e => {
+        <input className="add-input" type="text" value={this.state.value} onChange={e => {
           this.setState({
             value: e.target.value
           })
-        }}/>
-        <button onClick={e => {
-          onAdd(this.state.value)
-          this.setState({
-            value: ''
-          })
-        }}>提交
+        }}
+               onKeyUp={ e => {
+                 if (e.which === 13) {
+                   this.submitData()
+                 }
+               }}
+        />
+        <button className="submit-btn" onClick={this.submitData}>提交
         </button>
       </div>
     )
