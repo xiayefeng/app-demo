@@ -1,15 +1,23 @@
 import React, {Component} from 'react'
 
+class LoadingMask extends Component{
+  render(){
+    return (
+      <div className="mask-wrap">loading...</div>
+    )
+  }
+}
+
 class LoadingComponent extends Component{
   state = {
-    ...super.state, loading: false
+    ...super.state,
+    loading: false
   }
   render(){
     const {loading} = this.state
     return (
       <div className="loading-box">
-        {loading &&<LoadingMask/>}
-        {super.render()}
+        {loading && <LoadingMask/>}
       </div>
     )
   }
@@ -22,10 +30,15 @@ class Article extends LoadingComponent{
     return (
       <div>
         article
+        {super.render()}
       </div>
     )
   }
   componentDidMount(){
     this.showLoading()
+    setTimeout(() => {
+      this.hideLoading()
+    }, 2500)
   }
 }
+export default Article
