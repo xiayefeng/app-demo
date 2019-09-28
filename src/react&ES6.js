@@ -1,5 +1,7 @@
 import React, {Component} from 'react'
 
+import {math} from './es6-decorator'
+
 class LoadingMask extends Component{
   render(){
     return (
@@ -35,6 +37,7 @@ class Article extends LoadingComponent{
     )
   }
   componentDidMount(){
+    math.add(2, 4)
     this.showLoading()
     setTimeout(() => {
       this.hideLoading()
