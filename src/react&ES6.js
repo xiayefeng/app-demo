@@ -1,6 +1,7 @@
 import React, {Component} from 'react'
-
-// import {math} from './es6-decorator'
+import {math} from './es6-decorator'
+import Icon from '@/components/Icon'
+import './es6-css.scss'
 
 class LoadingMask extends Component{
   render(){
@@ -30,14 +31,18 @@ class LoadingComponent extends Component{
 class Article extends LoadingComponent{
   render(){
     return (
-      <div>
+      <div className="wrap">
         article
+        <Icon name="huidaodingbu" style={{color: '#f00', fontSize: '24px'}} />
+        <Icon name="zengjia" classes="my-add" type="classes" onClick={() => {
+            console.log('click add icon')
+        }} />
         {super.render()}
       </div>
     )
   }
   componentDidMount(){
-    // math.add(2, 4)
+    math.add(2, 4)
     this.showLoading()
     setTimeout(() => {
       this.hideLoading()

@@ -1,5 +1,4 @@
-class Math {
-
+class Math2 {
   @log
   add(a, b){
     return a + b
@@ -17,4 +16,4 @@ function log(target, name, descriptor){
   return descriptor
 }
 
-export const math = new Math()
+export const math = new Math2()

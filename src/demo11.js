@@ -1,6 +1,12 @@
 import React, {Component} from 'react'
-import ReactDOM from 'react-dom'
 
+class LoadingMask extends Component{
+  render(){
+    return (
+      <div className="mask-wrap">loading...</div>
+    )
+  }
+}
 let loading = (Com) => {
   class LoadingComponent extends Com{
     state = {
@@ -26,12 +32,18 @@ let loading = (Com) => {
 @loading
 class App extends Component{
   render(){
-    <div>
-      app
-
-    </div>
+    return (
+      <div>
+        app
+      </div>
+    )
   }
   componentDidMount(){
     this.showLoading()
+    setTimeout(() => {
+      this.hideLoading()
+    }, 3000)
   }
 }
+
+export default App
