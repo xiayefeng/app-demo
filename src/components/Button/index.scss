@@ -1,6 +1,10 @@
 @import "../theme/index.scss";
 
-.primary{
-  background: $primaryColor;
-  color: #fff;
+.button{
+  border-radius: 4px;
+
+  &.primary-btn{
+    color: #fff;
+    background-color:  $primary-color;
+  }
 }

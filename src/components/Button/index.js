@@ -1,6 +1,7 @@
 import React, {Component} from 'react'
 import PropTypes from 'prop-types'
 import Icon from '../Icon'
+import './index.scss'
 
 class Button extends Component{
   static propTypes = {
@@ -21,7 +22,7 @@ class Button extends Component{
       ...props
     } = this.props
     return (
-      <button className={`primary ${classes}`} {...props} >
+      <button className={`button ${type}-btn ${classes}`} {...props} >
         {icon && <Icon name={icon} />}
         {children}
       </button>
@@ -29,4 +30,4 @@ class Button extends Component{
   }
 }
 
-export default Icon
+export default Button

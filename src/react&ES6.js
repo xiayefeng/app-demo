@@ -33,7 +33,9 @@ class Article extends LoadingComponent{
     return (
       <div className="wrap">
         article
-        <Icon name="huidaodingbu" style={{color: '#f00', fontSize: '24px'}} />
+        <Icon name="huidaodingbu" style={{color: '#f00', fontSize: '24px'}} onClick={() => {
+          alert(1)
+        }}/>
         <Icon name="zengjia" classes="my-add" type="classes" onClick={() => {
             console.log('click add icon')
         }} />
