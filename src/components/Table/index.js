@@ -5,8 +5,7 @@ import './index.scss'
 class ColumnItem extends Component {
   render () {
     const {
-      item,
-      render = () => item.title,
+      item
     } = this.props
     return (
       <td>{item.title}</td>
@@ -18,10 +17,11 @@ class DataSourceItem extends Component {
   render () {
     const {
       columns,
-      dataItem
+      dataItem,
+      index
     } = this.props
 
-    const tds = columns.map(item => <td key={item.dataIndex}>{dataItem[item.dataIndex]}</td>)
+    const tds = columns.map(item => (item.render? item.render(dataItem, index, item.dataIndex): <td key={item.dataIndex}>{dataItem[item.dataIndex]}</td>))
 
     return (
       <tr>
@@ -53,7 +53,7 @@ class DataSource extends Component {
       columns
     } = this.props
 
-    let trs = dataSource.map(item => <DataSourceItem key={item.id} dataItem={item} columns={columns}/>)
+    let trs = dataSource.map((item, index) => <DataSourceItem key={item.id} dataItem={item} index={index} columns={columns}/>)
 
     return (
       <tbody>

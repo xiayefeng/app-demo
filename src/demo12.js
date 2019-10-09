@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import Input from '@/components/Input'
 import Table from '@/components/Table'
+import MyComponent from './demo13'
 
 let dataSource = [
   {
@@ -41,10 +42,17 @@ class App extends Component{
           })*/
         }} />
         <Table columns={[
-          {title: '姓名', dataIndex: 'name', key: 'name'},
+          {title: '姓名', dataIndex: 'name', key: 'name', render(item, index, key){
+            return (
+              <td key={key}>
+                <a href="#">{item[key]}</a>
+              </td>
+            )
+            }},
           {title: '年龄', dataIndex: 'age', key: 'age'},
           {title: '性别', dataIndex: 'sex', key: 'sex'}
         ]} dataSource={dataSource} />
+        <MyComponent />
       </>
     )
   }
