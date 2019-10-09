@@ -6,7 +6,7 @@ class MyComponent extends Component {
     title: '哈哈哈'
   } ]
 
-  static getColumnTitel = (tabkeys) => {
+  static getColumnTitle = (tabkeys) => {
     console.log(this.columnAction)
   }
 
@@ -20,6 +20,25 @@ class MyComponent extends Component {
   }
 }
 
-MyComponent.getColumnTitel()
+class CustomHTMLElement {
+  constructor(element) {
+    this.element = element;
+  }
+
+  get html() {
+    return this.element.innerHTML;
+  }
+
+  set html(value) {
+    this.element.innerHTML = value;
+  }
+  getValue(){
+    console.log(this.html)
+  }
+}
+var customEl = new CustomHTMLElement(document.getElementsByTagName('body')[0])
+// customEl.getValue()
+
+MyComponent.getColumnTitle()
 
 export default MyComponent
