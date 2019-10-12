@@ -10,8 +10,6 @@ class MyComponent extends Component {
     console.log(this.columnAction)
   }
 
-
-
   render ()
   {
     return (
