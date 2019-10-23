@@ -1,6 +1,6 @@
 import React, {Component, PureComponent} from 'react'
 
-class Item extends PureComponent{
+/* class Item extends PureComponent{
   render() {
     return (
       <div>
@@ -16,6 +16,10 @@ class Item extends PureComponent{
   componentDidMount() {
     console.log(this.props.name, 'mount')
   }
+
+  componentDidUpdate() {
+    console.log('update',this.props.name)
+}
 
   componentWillUnmount() {
     console.log(this.props.name, 'unmount')
@@ -52,6 +56,79 @@ class App extends Component{
   }
   componentDidMount(){
     window.app = this
+  }
+} */
+/* class Child extends Component{
+  render() {
+      return (
+          <div>
+              {this.props.name}
+          </div>
+      );
+  }
+  componentDidMount() {
+      console.log('mount',this.props.name)
+  }
+  componentDidUpdate() {
+      console.log('update',this.props.name)
+  }
+  componentWillUnmount() {
+      console.log('unmount',this.props.name)
+  }
+
+}
+class App extends Component{
+  state = {
+      list: ['a','b','c']
+  }
+  render() {
+      return (
+          <div>
+              {this.state.list.map(item => <Child  name={item}/>)}
+              <button onClick={e => {
+                  this.setState({
+                      list: ['b','c','d']
+                  })
+              }}>set</button>
+          </div>
+      );
+  }
+} */
+
+class Child extends Component{
+  render() {
+          return (
+                   <div>
+                            {this.props.name}
+                   </div>
+          );
+  }
+  componentDidMount() {
+          console.log('mount',this.props.name)
+  }
+  componentDidUpdate() {
+          console.log('update',this.props.name)
+  }
+  componentWillUnmount() {
+          console.log('unmount',this.props.name)
+  }
+
+}
+class App extends Component{
+  state = {
+          list: ['a','b','c']
+  }
+  render() {
+          return (
+                   <div>
+                            {this.state.list.map(item => <Child key={item} name={item}/>)}
+                            <button onClick={e => {
+                                     this.setState({
+                                             list: ['b','c','d']
+                                     })
+                            }}>set</button>
+                   </div>
+          );
   }
 }
 
