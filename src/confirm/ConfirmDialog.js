@@ -33,8 +33,8 @@ class ConfirmDialog extends Component {
             {content}
           </div>
           <div className="dialog-footer">
-            <button onClick={event => confirmSource.hide()}>取消</button>
-            <button className="sure-btn" onClick={ event => {
+            <button className="btn" onClick={event => confirmSource.hide()}>取消</button>
+            <button className="sure-btn btn" onClick={ event => {
               confirm()
               confirmSource.hide()
             }}>确定</button>

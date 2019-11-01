@@ -14,7 +14,7 @@
 		background-color: rgba(0, 0, 0, .4)
 	}
 	.dialog-box{
-		width: 300px;
+		width: 400px;
 		height: 200px;
 		position: absolute;
 		background-color: #fff;
@@ -75,7 +75,7 @@
 	}
 	.dialog-footer{
 		text-align: center;
-		button{
+		.btn{
 			height: 30px;
 			line-height: 30px;
 			border-radius: 4px;

@@ -31,3 +31,9 @@
     transform: rotate(360deg);
   }
 }
+
+.my-icon{
+  font-size: 36px;
+  color: #8470ff;
+  cursor: pointer;
+}
